@@ -1,0 +1,335 @@
+<init>:199, RequestMappingHandlerAdapter (org.springframework.web.servlet.mvc.method.annotation)
+createRequestMappingHandlerAdapter:593, WebMvcConfigurationSupport (org.springframework.web.servlet.config.annotation)
+createRequestMappingHandlerAdapter:461, WebMvcAutoConfiguration$EnableWebMvcConfiguration (org.springframework.boot.autoconfigure.web.servlet)
+requestMappingHandlerAdapter:561, WebMvcConfigurationSupport (org.springframework.web.servlet.config.annotation)
+requestMappingHandlerAdapter:450, WebMvcAutoConfiguration$EnableWebMvcConfiguration (org.springframework.boot.autoconfigure.web.servlet)
+CGLIB$requestMappingHandlerAdapter$4:-1, WebMvcAutoConfiguration$EnableWebMvcConfiguration$$EnhancerBySpringCGLIB$$4af7c627 (org.springframework.boot.autoconfigure.web.servlet)
+invoke:-1, WebMvcAutoConfiguration$EnableWebMvcConfiguration$$EnhancerBySpringCGLIB$$4af7c627$$FastClassBySpringCGLIB$$e90b7994 (org.springframework.boot.autoconfigure.web.servlet)
+invokeSuper:244, MethodProxy (org.springframework.cglib.proxy)
+intercept:363, ConfigurationClassEnhancer$BeanMethodInterceptor (org.springframework.context.annotation)
+requestMappingHandlerAdapter:-1, WebMvcAutoConfiguration$EnableWebMvcConfiguration$$EnhancerBySpringCGLIB$$4af7c627 (org.springframework.boot.autoconfigure.web.servlet)
+invoke0:-1, NativeMethodAccessorImpl (jdk.internal.reflect)
+invoke:62, NativeMethodAccessorImpl (jdk.internal.reflect)
+invoke:43, DelegatingMethodAccessorImpl (jdk.internal.reflect)
+invoke:566, Method (java.lang.reflect)
+instantiate:154, SimpleInstantiationStrategy (org.springframework.beans.factory.support)
+instantiate:622, ConstructorResolver (org.springframework.beans.factory.support)
+instantiateUsingFactoryMethod:607, ConstructorResolver (org.springframework.beans.factory.support)
+instantiateUsingFactoryMethod:1321, AbstractAutowireCapableBeanFactory (org.springframework.beans.factory.support)
+createBeanInstance:1160, AbstractAutowireCapableBeanFactory (org.springframework.beans.factory.support)
+doCreateBean:555, AbstractAutowireCapableBeanFactory (org.springframework.beans.factory.support)
+createBean:515, AbstractAutowireCapableBeanFactory (org.springframework.beans.factory.support)
+lambda$doGetBean$0:320, AbstractBeanFactory (org.springframework.beans.factory.support)
+getObject:-1, 135469139 (org.springframework.beans.factory.support.AbstractBeanFactory$$Lambda$154)
+getSingleton:222, DefaultSingletonBeanRegistry (org.springframework.beans.factory.support)
+doGetBean:318, AbstractBeanFactory (org.springframework.beans.factory.support)
+getBean:199, AbstractBeanFactory (org.springframework.beans.factory.support)
+preInstantiateSingletons:845, DefaultListableBeanFactory (org.springframework.beans.factory.support)
+finishBeanFactoryInitialization:877, AbstractApplicationContext (org.springframework.context.support)
+refresh:549, AbstractApplicationContext (org.springframework.context.support)
+refresh:140, ServletWebServerApplicationContext (org.springframework.boot.web.servlet.context)
+refresh:742, SpringApplication (org.springframework.boot)
+refreshContext:389, SpringApplication (org.springframework.boot)
+run:311, SpringApplication (org.springframework.boot)
+run:1213, SpringApplication (org.springframework.boot)
+run:1202, SpringApplication (org.springframework.boot)
+main:9, Application (io.github.greenrecyclebin.astrology)
+invoke0:-1, NativeMethodAccessorImpl (jdk.internal.reflect)
+invoke:62, NativeMethodAccessorImpl (jdk.internal.reflect)
+invoke:43, DelegatingMethodAccessorImpl (jdk.internal.reflect)
+invoke:566, Method (java.lang.reflect)
+run:49, RestartLauncher (org.springframework.boot.devtools.restart)
+
+public RequestMappingHandlerAdapter() {
+		StringHttpMessageConverter stringHttpMessageConverter = new StringHttpMessageConverter();
+		stringHttpMessageConverter.setWriteAcceptCharset(false);  // see SPR-7316
+
+		this.messageConverters = new ArrayList<>(4);
+		this.messageConverters.add(new ByteArrayHttpMessageConverter());
+		this.messageConverters.add(stringHttpMessageConverter);
+		try {
+			this.messageConverters.add(new SourceHttpMessageConverter<>());
+		}
+		catch (Error err) {
+			// Ignore when no TransformerFactory implementation is available
+		}
+		this.messageConverters.add(new AllEncompassingFormHttpMessageConverter());
+	}
+
+this.messageConverters = {ArrayList@5180}  size = 4
+ 0 = {ByteArrayHttpMessageConverter@5200} 
+ 1 = {StringHttpMessageConverter@5186} 
+ 2 = {SourceHttpMessageConverter@5201} 
+ 3 = {AllEncompassingFormHttpMessageConverter@5202} 
+---
+<init>:62, HttpMessageConvertersAutoConfiguration (org.springframework.boot.autoconfigure.http)
+<init>:-1, HttpMessageConvertersAutoConfiguration$$EnhancerBySpringCGLIB$$df2060a (org.springframework.boot.autoconfigure.http)
+newInstance0:-1, NativeConstructorAccessorImpl (jdk.internal.reflect)
+newInstance:62, NativeConstructorAccessorImpl (jdk.internal.reflect)
+newInstance:45, DelegatingConstructorAccessorImpl (jdk.internal.reflect)
+newInstance:490, Constructor (java.lang.reflect)
+instantiateClass:172, BeanUtils (org.springframework.beans)
+instantiate:117, SimpleInstantiationStrategy (org.springframework.beans.factory.support)
+instantiate:300, ConstructorResolver (org.springframework.beans.factory.support)
+autowireConstructor:285, ConstructorResolver (org.springframework.beans.factory.support)
+autowireConstructor:1341, AbstractAutowireCapableBeanFactory (org.springframework.beans.factory.support)
+createBeanInstance:1187, AbstractAutowireCapableBeanFactory (org.springframework.beans.factory.support)
+doCreateBean:555, AbstractAutowireCapableBeanFactory (org.springframework.beans.factory.support)
+createBean:515, AbstractAutowireCapableBeanFactory (org.springframework.beans.factory.support)
+lambda$doGetBean$0:320, AbstractBeanFactory (org.springframework.beans.factory.support)
+getObject:-1, 1122666580 (org.springframework.beans.factory.support.AbstractBeanFactory$$Lambda$151)
+getSingleton:222, DefaultSingletonBeanRegistry (org.springframework.beans.factory.support)
+doGetBean:318, AbstractBeanFactory (org.springframework.beans.factory.support)
+getBean:199, AbstractBeanFactory (org.springframework.beans.factory.support)
+instantiateUsingFactoryMethod:392, ConstructorResolver (org.springframework.beans.factory.support)
+instantiateUsingFactoryMethod:1321, AbstractAutowireCapableBeanFactory (org.springframework.beans.factory.support)
+createBeanInstance:1160, AbstractAutowireCapableBeanFactory (org.springframework.beans.factory.support)
+doCreateBean:555, AbstractAutowireCapableBeanFactory (org.springframework.beans.factory.support)
+createBean:515, AbstractAutowireCapableBeanFactory (org.springframework.beans.factory.support)
+lambda$doGetBean$0:320, AbstractBeanFactory (org.springframework.beans.factory.support)
+getObject:-1, 1122666580 (org.springframework.beans.factory.support.AbstractBeanFactory$$Lambda$151)
+getSingleton:222, DefaultSingletonBeanRegistry (org.springframework.beans.factory.support)
+doGetBean:318, AbstractBeanFactory (org.springframework.beans.factory.support)
+getBean:199, AbstractBeanFactory (org.springframework.beans.factory.support)
+resolveCandidate:277, DependencyDescriptor (org.springframework.beans.factory.config)
+doResolveDependency:1251, DefaultListableBeanFactory (org.springframework.beans.factory.support)
+getIfAvailable:1883, DefaultListableBeanFactory$DependencyObjectProvider (org.springframework.beans.factory.support)
+ifAvailable:91, ObjectProvider (org.springframework.beans.factory)
+configureMessageConverters:209, WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter (org.springframework.boot.autoconfigure.web.servlet)
+configureMessageConverters:137, WebMvcConfigurerComposite (org.springframework.web.servlet.config.annotation)
+configureMessageConverters:118, DelegatingWebMvcConfiguration (org.springframework.web.servlet.config.annotation)
+getMessageConverters:745, WebMvcConfigurationSupport (org.springframework.web.servlet.config.annotation)
+requestMappingHandlerAdapter:563, WebMvcConfigurationSupport (org.springframework.web.servlet.config.annotation)
+requestMappingHandlerAdapter:450, WebMvcAutoConfiguration$EnableWebMvcConfiguration (org.springframework.boot.autoconfigure.web.servlet)
+CGLIB$requestMappingHandlerAdapter$5:-1, WebMvcAutoConfiguration$EnableWebMvcConfiguration$$EnhancerBySpringCGLIB$$5eab8af6 (org.springframework.boot.autoconfigure.web.servlet)
+invoke:-1, WebMvcAutoConfiguration$EnableWebMvcConfiguration$$EnhancerBySpringCGLIB$$5eab8af6$$FastClassBySpringCGLIB$$1e4866c8 (org.springframework.boot.autoconfigure.web.servlet)
+invokeSuper:244, MethodProxy (org.springframework.cglib.proxy)
+intercept:363, ConfigurationClassEnhancer$BeanMethodInterceptor (org.springframework.context.annotation)
+requestMappingHandlerAdapter:-1, WebMvcAutoConfiguration$EnableWebMvcConfiguration$$EnhancerBySpringCGLIB$$5eab8af6 (org.springframework.boot.autoconfigure.web.servlet)
+invoke0:-1, NativeMethodAccessorImpl (jdk.internal.reflect)
+invoke:62, NativeMethodAccessorImpl (jdk.internal.reflect)
+invoke:43, DelegatingMethodAccessorImpl (jdk.internal.reflect)
+invoke:566, Method (java.lang.reflect)
+instantiate:154, SimpleInstantiationStrategy (org.springframework.beans.factory.support)
+instantiate:622, ConstructorResolver (org.springframework.beans.factory.support)
+instantiateUsingFactoryMethod:607, ConstructorResolver (org.springframework.beans.factory.support)
+instantiateUsingFactoryMethod:1321, AbstractAutowireCapableBeanFactory (org.springframework.beans.factory.support)
+createBeanInstance:1160, AbstractAutowireCapableBeanFactory (org.springframework.beans.factory.support)
+doCreateBean:555, AbstractAutowireCapableBeanFactory (org.springframework.beans.factory.support)
+createBean:515, AbstractAutowireCapableBeanFactory (org.springframework.beans.factory.support)
+lambda$doGetBean$0:320, AbstractBeanFactory (org.springframework.beans.factory.support)
+getObject:-1, 1122666580 (org.springframework.beans.factory.support.AbstractBeanFactory$$Lambda$151)
+getSingleton:222, DefaultSingletonBeanRegistry (org.springframework.beans.factory.support)
+doGetBean:318, AbstractBeanFactory (org.springframework.beans.factory.support)
+getBean:199, AbstractBeanFactory (org.springframework.beans.factory.support)
+preInstantiateSingletons:845, DefaultListableBeanFactory (org.springframework.beans.factory.support)
+finishBeanFactoryInitialization:877, AbstractApplicationContext (org.springframework.context.support)
+refresh:549, AbstractApplicationContext (org.springframework.context.support)
+refresh:140, ServletWebServerApplicationContext (org.springframework.boot.web.servlet.context)
+refresh:742, SpringApplication (org.springframework.boot)
+refreshContext:389, SpringApplication (org.springframework.boot)
+run:311, SpringApplication (org.springframework.boot)
+run:1213, SpringApplication (org.springframework.boot)
+run:1202, SpringApplication (org.springframework.boot)
+main:14, Application (io.github.greenrecyclebin.astrology)
+invoke0:-1, NativeMethodAccessorImpl (jdk.internal.reflect)
+invoke:62, NativeMethodAccessorImpl (jdk.internal.reflect)
+invoke:43, DelegatingMethodAccessorImpl (jdk.internal.reflect)
+invoke:566, Method (java.lang.reflect)
+run:49, RestartLauncher (org.springframework.boot.devtools.restart)
+
+public HttpMessageConvertersAutoConfiguration(ObjectProvider<HttpMessageConverter<?>> convertersProvider) {
+		this.converters = convertersProvider.orderedStream().collect(Collectors.toList());
+	}
+
+convertersProvider = org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration
+
+this.converters = {ArrayList@5259}  size = 2
+ 0 = {StringHttpMessageConverter@5276} 
+ 1 = {MappingJackson2HttpMessageConverter@5277}
+---
+getCombinedConverters:111, HttpMessageConverters (org.springframework.boot.autoconfigure.http)
+<init>:103, HttpMessageConverters (org.springframework.boot.autoconfigure.http)
+<init>:91, HttpMessageConverters (org.springframework.boot.autoconfigure.http)
+messageConverters:68, HttpMessageConvertersAutoConfiguration (org.springframework.boot.autoconfigure.http)
+CGLIB$messageConverters$0:-1, HttpMessageConvertersAutoConfiguration$$EnhancerBySpringCGLIB$$9d8cb7f2 (org.springframework.boot.autoconfigure.http)
+invoke:-1, HttpMessageConvertersAutoConfiguration$$EnhancerBySpringCGLIB$$9d8cb7f2$$FastClassBySpringCGLIB$$240cf4e1 (org.springframework.boot.autoconfigure.http)
+invokeSuper:244, MethodProxy (org.springframework.cglib.proxy)
+intercept:363, ConfigurationClassEnhancer$BeanMethodInterceptor (org.springframework.context.annotation)
+messageConverters:-1, HttpMessageConvertersAutoConfiguration$$EnhancerBySpringCGLIB$$9d8cb7f2 (org.springframework.boot.autoconfigure.http)
+invoke0:-1, NativeMethodAccessorImpl (jdk.internal.reflect)
+invoke:62, NativeMethodAccessorImpl (jdk.internal.reflect)
+invoke:43, DelegatingMethodAccessorImpl (jdk.internal.reflect)
+invoke:566, Method (java.lang.reflect)
+instantiate:154, SimpleInstantiationStrategy (org.springframework.beans.factory.support)
+instantiate:622, ConstructorResolver (org.springframework.beans.factory.support)
+instantiateUsingFactoryMethod:456, ConstructorResolver (org.springframework.beans.factory.support)
+instantiateUsingFactoryMethod:1321, AbstractAutowireCapableBeanFactory (org.springframework.beans.factory.support)
+createBeanInstance:1160, AbstractAutowireCapableBeanFactory (org.springframework.beans.factory.support)
+doCreateBean:555, AbstractAutowireCapableBeanFactory (org.springframework.beans.factory.support)
+createBean:515, AbstractAutowireCapableBeanFactory (org.springframework.beans.factory.support)
+lambda$doGetBean$0:320, AbstractBeanFactory (org.springframework.beans.factory.support)
+getObject:-1, 262809373 (org.springframework.beans.factory.support.AbstractBeanFactory$$Lambda$159)
+getSingleton:222, DefaultSingletonBeanRegistry (org.springframework.beans.factory.support)
+doGetBean:318, AbstractBeanFactory (org.springframework.beans.factory.support)
+getBean:199, AbstractBeanFactory (org.springframework.beans.factory.support)
+resolveCandidate:277, DependencyDescriptor (org.springframework.beans.factory.config)
+doResolveDependency:1251, DefaultListableBeanFactory (org.springframework.beans.factory.support)
+getIfAvailable:1883, DefaultListableBeanFactory$DependencyObjectProvider (org.springframework.beans.factory.support)
+ifAvailable:91, ObjectProvider (org.springframework.beans.factory)
+configureMessageConverters:209, WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter (org.springframework.boot.autoconfigure.web.servlet)
+configureMessageConverters:137, WebMvcConfigurerComposite (org.springframework.web.servlet.config.annotation)
+configureMessageConverters:118, DelegatingWebMvcConfiguration (org.springframework.web.servlet.config.annotation)
+getMessageConverters:745, WebMvcConfigurationSupport (org.springframework.web.servlet.config.annotation)
+requestMappingHandlerAdapter:563, WebMvcConfigurationSupport (org.springframework.web.servlet.config.annotation)
+requestMappingHandlerAdapter:450, WebMvcAutoConfiguration$EnableWebMvcConfiguration (org.springframework.boot.autoconfigure.web.servlet)
+CGLIB$requestMappingHandlerAdapter$4:-1, WebMvcAutoConfiguration$EnableWebMvcConfiguration$$EnhancerBySpringCGLIB$$ee463cde (org.springframework.boot.autoconfigure.web.servlet)
+invoke:-1, WebMvcAutoConfiguration$EnableWebMvcConfiguration$$EnhancerBySpringCGLIB$$ee463cde$$FastClassBySpringCGLIB$$49487411 (org.springframework.boot.autoconfigure.web.servlet)
+invokeSuper:244, MethodProxy (org.springframework.cglib.proxy)
+intercept:363, ConfigurationClassEnhancer$BeanMethodInterceptor (org.springframework.context.annotation)
+requestMappingHandlerAdapter:-1, WebMvcAutoConfiguration$EnableWebMvcConfiguration$$EnhancerBySpringCGLIB$$ee463cde (org.springframework.boot.autoconfigure.web.servlet)
+invoke0:-1, NativeMethodAccessorImpl (jdk.internal.reflect)
+invoke:62, NativeMethodAccessorImpl (jdk.internal.reflect)
+invoke:43, DelegatingMethodAccessorImpl (jdk.internal.reflect)
+invoke:566, Method (java.lang.reflect)
+instantiate:154, SimpleInstantiationStrategy (org.springframework.beans.factory.support)
+instantiate:622, ConstructorResolver (org.springframework.beans.factory.support)
+instantiateUsingFactoryMethod:607, ConstructorResolver (org.springframework.beans.factory.support)
+instantiateUsingFactoryMethod:1321, AbstractAutowireCapableBeanFactory (org.springframework.beans.factory.support)
+createBeanInstance:1160, AbstractAutowireCapableBeanFactory (org.springframework.beans.factory.support)
+doCreateBean:555, AbstractAutowireCapableBeanFactory (org.springframework.beans.factory.support)
+createBean:515, AbstractAutowireCapableBeanFactory (org.springframework.beans.factory.support)
+lambda$doGetBean$0:320, AbstractBeanFactory (org.springframework.beans.factory.support)
+getObject:-1, 262809373 (org.springframework.beans.factory.support.AbstractBeanFactory$$Lambda$159)
+getSingleton:222, DefaultSingletonBeanRegistry (org.springframework.beans.factory.support)
+doGetBean:318, AbstractBeanFactory (org.springframework.beans.factory.support)
+getBean:199, AbstractBeanFactory (org.springframework.beans.factory.support)
+preInstantiateSingletons:845, DefaultListableBeanFactory (org.springframework.beans.factory.support)
+finishBeanFactoryInitialization:877, AbstractApplicationContext (org.springframework.context.support)
+refresh:549, AbstractApplicationContext (org.springframework.context.support)
+refresh:140, ServletWebServerApplicationContext (org.springframework.boot.web.servlet.context)
+refresh:742, SpringApplication (org.springframework.boot)
+refreshContext:389, SpringApplication (org.springframework.boot)
+run:311, SpringApplication (org.springframework.boot)
+run:1213, SpringApplication (org.springframework.boot)
+run:1202, SpringApplication (org.springframework.boot)
+main:14, Application (io.github.greenrecyclebin.astrology)
+invoke0:-1, NativeMethodAccessorImpl (jdk.internal.reflect)
+invoke:62, NativeMethodAccessorImpl (jdk.internal.reflect)
+invoke:43, DelegatingMethodAccessorImpl (jdk.internal.reflect)
+invoke:566, Method (java.lang.reflect)
+run:49, RestartLauncher (org.springframework.boot.devtools.restart)
+
+converters = {ArrayList@5288}  size = 2
+ 0 = {StringHttpMessageConverter@5293} 
+ 1 = {MappingJackson2HttpMessageConverter@5294}
+
+defaultConverters = {ArrayList@5309}  size = 7
+ 0 = {ByteArrayHttpMessageConverter@5314} 
+ 1 = {StringHttpMessageConverter@5315} 
+ 2 = {ResourceHttpMessageConverter@5316} 
+ 3 = {ResourceRegionHttpMessageConverter@5317} 
+ 4 = {SourceHttpMessageConverter@5318} 
+ 5 = {AllEncompassingFormHttpMessageConverter@5319} 
+ 6 = {MappingJackson2HttpMessageConverter@5320}
+---
+
+formConverter = {AllEncompassingFormHttpMessageConverter@5319}
+getCombinedConverters:111, HttpMessageConverters (org.springframework.boot.autoconfigure.http) [2]
+configurePartConverters:143, HttpMessageConverters (org.springframework.boot.autoconfigure.http)
+getCombinedConverters:124, HttpMessageConverters (org.springframework.boot.autoconfigure.http) [1]
+<init>:103, HttpMessageConverters (org.springframework.boot.autoconfigure.http)
+<init>:91, HttpMessageConverters (org.springframework.boot.autoconfigure.http)
+messageConverters:68, HttpMessageConvertersAutoConfiguration (org.springframework.boot.autoconfigure.http)
+CGLIB$messageConverters$0:-1, HttpMessageConvertersAutoConfiguration$$EnhancerBySpringCGLIB$$9d8cb7f2 (org.springframework.boot.autoconfigure.http)
+invoke:-1, HttpMessageConvertersAutoConfiguration$$EnhancerBySpringCGLIB$$9d8cb7f2$$FastClassBySpringCGLIB$$240cf4e1 (org.springframework.boot.autoconfigure.http)
+invokeSuper:244, MethodProxy (org.springframework.cglib.proxy)
+intercept:363, ConfigurationClassEnhancer$BeanMethodInterceptor (org.springframework.context.annotation)
+messageConverters:-1, HttpMessageConvertersAutoConfiguration$$EnhancerBySpringCGLIB$$9d8cb7f2 (org.springframework.boot.autoconfigure.http)
+invoke0:-1, NativeMethodAccessorImpl (jdk.internal.reflect)
+invoke:62, NativeMethodAccessorImpl (jdk.internal.reflect)
+invoke:43, DelegatingMethodAccessorImpl (jdk.internal.reflect)
+invoke:566, Method (java.lang.reflect)
+instantiate:154, SimpleInstantiationStrategy (org.springframework.beans.factory.support)
+instantiate:622, ConstructorResolver (org.springframework.beans.factory.support)
+instantiateUsingFactoryMethod:456, ConstructorResolver (org.springframework.beans.factory.support)
+instantiateUsingFactoryMethod:1321, AbstractAutowireCapableBeanFactory (org.springframework.beans.factory.support)
+createBeanInstance:1160, AbstractAutowireCapableBeanFactory (org.springframework.beans.factory.support)
+doCreateBean:555, AbstractAutowireCapableBeanFactory (org.springframework.beans.factory.support)
+createBean:515, AbstractAutowireCapableBeanFactory (org.springframework.beans.factory.support)
+lambda$doGetBean$0:320, AbstractBeanFactory (org.springframework.beans.factory.support)
+getObject:-1, 262809373 (org.springframework.beans.factory.support.AbstractBeanFactory$$Lambda$159)
+getSingleton:222, DefaultSingletonBeanRegistry (org.springframework.beans.factory.support)
+doGetBean:318, AbstractBeanFactory (org.springframework.beans.factory.support)
+getBean:199, AbstractBeanFactory (org.springframework.beans.factory.support)
+resolveCandidate:277, DependencyDescriptor (org.springframework.beans.factory.config)
+doResolveDependency:1251, DefaultListableBeanFactory (org.springframework.beans.factory.support)
+getIfAvailable:1883, DefaultListableBeanFactory$DependencyObjectProvider (org.springframework.beans.factory.support)
+ifAvailable:91, ObjectProvider (org.springframework.beans.factory)
+configureMessageConverters:209, WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter (org.springframework.boot.autoconfigure.web.servlet)
+configureMessageConverters:137, WebMvcConfigurerComposite (org.springframework.web.servlet.config.annotation)
+configureMessageConverters:118, DelegatingWebMvcConfiguration (org.springframework.web.servlet.config.annotation)
+getMessageConverters:745, WebMvcConfigurationSupport (org.springframework.web.servlet.config.annotation)
+requestMappingHandlerAdapter:563, WebMvcConfigurationSupport (org.springframework.web.servlet.config.annotation)
+requestMappingHandlerAdapter:450, WebMvcAutoConfiguration$EnableWebMvcConfiguration (org.springframework.boot.autoconfigure.web.servlet)
+CGLIB$requestMappingHandlerAdapter$4:-1, WebMvcAutoConfiguration$EnableWebMvcConfiguration$$EnhancerBySpringCGLIB$$ee463cde (org.springframework.boot.autoconfigure.web.servlet)
+invoke:-1, WebMvcAutoConfiguration$EnableWebMvcConfiguration$$EnhancerBySpringCGLIB$$ee463cde$$FastClassBySpringCGLIB$$49487411 (org.springframework.boot.autoconfigure.web.servlet)
+invokeSuper:244, MethodProxy (org.springframework.cglib.proxy)
+intercept:363, ConfigurationClassEnhancer$BeanMethodInterceptor (org.springframework.context.annotation)
+requestMappingHandlerAdapter:-1, WebMvcAutoConfiguration$EnableWebMvcConfiguration$$EnhancerBySpringCGLIB$$ee463cde (org.springframework.boot.autoconfigure.web.servlet)
+invoke0:-1, NativeMethodAccessorImpl (jdk.internal.reflect)
+invoke:62, NativeMethodAccessorImpl (jdk.internal.reflect)
+invoke:43, DelegatingMethodAccessorImpl (jdk.internal.reflect)
+invoke:566, Method (java.lang.reflect)
+instantiate:154, SimpleInstantiationStrategy (org.springframework.beans.factory.support)
+instantiate:622, ConstructorResolver (org.springframework.beans.factory.support)
+instantiateUsingFactoryMethod:607, ConstructorResolver (org.springframework.beans.factory.support)
+instantiateUsingFactoryMethod:1321, AbstractAutowireCapableBeanFactory (org.springframework.beans.factory.support)
+createBeanInstance:1160, AbstractAutowireCapableBeanFactory (org.springframework.beans.factory.support)
+doCreateBean:555, AbstractAutowireCapableBeanFactory (org.springframework.beans.factory.support)
+createBean:515, AbstractAutowireCapableBeanFactory (org.springframework.beans.factory.support)
+lambda$doGetBean$0:320, AbstractBeanFactory (org.springframework.beans.factory.support)
+getObject:-1, 262809373 (org.springframework.beans.factory.support.AbstractBeanFactory$$Lambda$159)
+getSingleton:222, DefaultSingletonBeanRegistry (org.springframework.beans.factory.support)
+doGetBean:318, AbstractBeanFactory (org.springframework.beans.factory.support)
+getBean:199, AbstractBeanFactory (org.springframework.beans.factory.support)
+preInstantiateSingletons:845, DefaultListableBeanFactory (org.springframework.beans.factory.support)
+finishBeanFactoryInitialization:877, AbstractApplicationContext (org.springframework.context.support)
+refresh:549, AbstractApplicationContext (org.springframework.context.support)
+refresh:140, ServletWebServerApplicationContext (org.springframework.boot.web.servlet.context)
+refresh:742, SpringApplication (org.springframework.boot)
+refreshContext:389, SpringApplication (org.springframework.boot)
+run:311, SpringApplication (org.springframework.boot)
+run:1213, SpringApplication (org.springframework.boot)
+run:1202, SpringApplication (org.springframework.boot)
+main:14, Application (io.github.greenrecyclebin.astrology)
+invoke0:-1, NativeMethodAccessorImpl (jdk.internal.reflect)
+invoke:62, NativeMethodAccessorImpl (jdk.internal.reflect)
+invoke:43, DelegatingMethodAccessorImpl (jdk.internal.reflect)
+invoke:566, Method (java.lang.reflect)
+run:49, RestartLauncher (org.springframework.boot.devtools.restart)
+
+formConverter = {AllEncompassingFormHttpMessageConverter@5319} 
+ supportedMediaTypes = {ArrayList@5332}  size = 2
+ partConverters = {ArrayList@5322}  size = 5
+ charset = {UTF_8@5333} "UTF-8"
+ multipartCharset = null
+
+converters = {ArrayList@5288}  size = 2
+ 0 = {StringHttpMessageConverter@5293} 
+ 1 = {MappingJackson2HttpMessageConverter@5294}
+
+partConverters = {ArrayList@5322}  size = 5
+ 0 = {ByteArrayHttpMessageConverter@5325} 
+ 1 = {StringHttpMessageConverter@5326} 
+ 2 = {ResourceHttpMessageConverter@5327} 
+ 3 = {SourceHttpMessageConverter@5328} 
+ 4 = {MappingJackson2HttpMessageConverter@5329}
+
+0 = {ByteArrayHttpMessageConverter@5314} 
+ 1 = {StringHttpMessageConverter@5315} 
+ 2 = {ResourceHttpMessageConverter@5316} 
+ 3 = {ResourceRegionHttpMessageConverter@5317} 
+ 4 = {SourceHttpMessageConverter@5318} 
+ 5 = {AllEncompassingFormHttpMessageConverter@5319} 
+ 6 = {MappingJackson2HttpMessageConverter@5320}

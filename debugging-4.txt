@@ -1,0 +1,11 @@
+# Change -> Bad, Shift + F10 (or Build) -> Missing ControllerAdvice.class????
+# Rebuild Project or ./gradlew clean build fixed it
+
+467efafdee25befa3660d31ed05b9b10  build/classes/java/main/io/github/greenrecyclebin/astrology/Application.class
+5f9d64e9c21b938d22b906876cafe437  build/classes/java/main/io/github/greenrecyclebin/astrology/Builder.class
+fe930998bd0e06367bb7a5396623e792  build/classes/java/main/io/github/greenrecyclebin/astrology/JacksonConfiguration.class
+396371a7e05586084fec0a722f567867  build/classes/java/main/io/github/greenrecyclebin/astrology/User$Builder.class
+13bcd1d4ec03a954ce9727970be3b972  build/classes/java/main/io/github/greenrecyclebin/astrology/User.class
+f910df267044b67c2f13f4d2b335566e  build/classes/java/main/io/github/greenrecyclebin/astrology/UserController.class
+5d5a2a253009e29552b310bcda73bd10  build/classes/java/main/io/github/greenrecyclebin/astrology/ValidationError.class
+504b3e2e769ceff6a2caeb679d37fdd3  build/classes/java/main/io/github/greenrecyclebin/astrology/ValidatorInitializer.class

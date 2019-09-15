@@ -1,0 +1,275 @@
+var adapter = RequestMappingHandlerAdapter#createRequestMappingHandlerAdatpter
+requestMappingHandlerAdapter:561, WebMvcConfigurationSupport
+requestMappingHandlerAdapter:426, WebMvcAutoConfiguration$EnableWebMvcConfiguration
+  - 4 default message converters:
+
+adapter.getMessageConverters() = {ArrayList@5186}  size = 4
+ 0 = {ByteArrayHttpMessageConverter@5203} 
+  logger = {CompositeLog@5207} 
+  supportedMediaTypes = {ArrayList@5208}  size = 2
+   0 = {MediaType@5220} "application/octet-stream"
+   1 = {MediaType@5215} "*/*"
+  defaultCharset = null
+ 1 = {StringHttpMessageConverter@5204} 
+  availableCharsets = null
+  writeAcceptCharset = false
+  logger = {CompositeLog@5209} 
+  supportedMediaTypes = {ArrayList@5210}  size = 2
+   0 = {MediaType@5214} "text/plain"
+   1 = {MediaType@5215} "*/*"
+  defaultCharset = {ISO_8859_1@5211} "ISO-8859-1"
+ 2 = {SourceHttpMessageConverter@5205} 
+  transformerFactory = {TransformerFactoryImpl@5223} 
+  supportDtd = false
+  processExternalEntities = false
+  logger = {CompositeLog@5224} 
+  supportedMediaTypes = {ArrayList@5225}  size = 3
+   0 = {MediaType@5227} "application/xml"
+   1 = {MediaType@5228} "text/xml"
+   2 = {MediaType@5229} "application/*+xml"
+  defaultCharset = null
+ 3 = {AllEncompassingFormHttpMessageConverter@5206} 
+  supportedMediaTypes = {ArrayList@5233}  size = 2
+   0 = {MediaType@5238} "application/x-www-form-urlencoded"
+   1 = {MediaType@5239} "multipart/form-data"
+  partConverters = {ArrayList@5234}  size = 5
+   0 = {ByteArrayHttpMessageConverter@5243} 
+    logger = {CompositeLog@5248} 
+    supportedMediaTypes = {ArrayList@5249}  size = 2
+     0 = {MediaType@5220} "application/octet-stream"
+     1 = {MediaType@5215} "*/*"
+    defaultCharset = null
+   1 = {StringHttpMessageConverter@5244} 
+    availableCharsets = null
+    writeAcceptCharset = false
+    logger = {CompositeLog@5253} 
+    supportedMediaTypes = {ArrayList@5254}  size = 2
+     0 = {MediaType@5214} "text/plain"
+     1 = {MediaType@5215} "*/*"
+    defaultCharset = {UTF_8@5235} "UTF-8"
+   2 = {ResourceHttpMessageConverter@5245} 
+    supportsReadStreaming = true
+    logger = {CompositeLog@5258} 
+    supportedMediaTypes = {ArrayList@5259}  size = 1
+     0 = {MediaType@5215} "*/*"
+    defaultCharset = null
+   3 = {SourceHttpMessageConverter@5246} 
+    transformerFactory = {TransformerFactoryImpl@5262} 
+    supportDtd = false
+    processExternalEntities = false
+    logger = {CompositeLog@5263} 
+    supportedMediaTypes = {ArrayList@5264}  size = 3
+     0 = {MediaType@5227} "application/xml"
+     1 = {MediaType@5228} "text/xml"
+     2 = {MediaType@5266} "application/*+xml"
+    defaultCharset = null
+   4 = {MappingJackson2HttpMessageConverter@5247} 
+    jsonPrefix = null
+    objectMapper = {ObjectMapper@5270} 
+    prettyPrint = null
+    ssePrettyPrinter = {DefaultPrettyPrinter@5271} 
+    logger = {CompositeLog@5272} 
+    supportedMediaTypes = {ArrayList@5273}  size = 2
+     0 = {MediaType@5275} "application/json"
+     1 = {MediaType@5276} "application/*+json"
+    defaultCharset = {UTF_8@5235} "UTF-8"
+  charset = {UTF_8@5235} "UTF-8"
+  multipartCharset = null
+---
+this.messageConvertersProvider causes HttpMessageConvertersAutoConfiguration#HttpMessageConvertersAutoConfiguration(ObjectProvider<HttpMessageConverter<?>> convertersProvider) to be called, because it provides HttpMessageConverters in HttpMessageConvertersAutoConfiguration#messageConverters.
+<-
+this.messageConvertersProvider
+		.ifAvailable((customConverters) -> converters.addAll(customConverters.getConverters()));
+configureMessageConverters:210, WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter
+<-
+configureMessageConverters:137, WebMvcConfigurerComposite
+configureMessageConverters:118, DelegatingWebMvcConfiguration
+configureMessageConverters(this.messageConverters);
+getMessageConverters:745, WebMvcConfigurationSupport
+<-
+adapter.setMessageConverters(getMessageConverters());
+requestMappingHandlerAdapter:563, WebMvcConfigurationSupport
+<-
+requestMappingHandlerAdapter:426, WebMvcAutoConfiguration$EnableWebMvcConfiguration
+<<
+HttpMessageConvertersAutoConfiguration#HttpMessageConvertersAutoConfiguration(ObjectProvider<HttpMessageConverter<?>> convertersProvider)
+this.converters = convertersProvider.orderedStream().collect(Collectors.toList());
+
+this.converters = {ArrayList@6810}  size = 2
+ 0 = {StringHttpMessageConverter@6812} 
+  availableCharsets = null
+  writeAcceptCharset = false
+  logger = {CompositeLog@6814} 
+  supportedMediaTypes = {ArrayList@6815}  size = 2
+   0 = {MediaType@5214} "text/plain"
+   1 = {MediaType@5215} "*/*"
+  defaultCharset = {UTF_8@5235} "UTF-8"
+ 1 = {MappingJackson2HttpMessageConverter@6813} 
+  jsonPrefix = null
+  objectMapper = {ObjectMapper@6819} 
+  prettyPrint = null
+  ssePrettyPrinter = {DefaultPrettyPrinter@6820} 
+  logger = {CompositeLog@6821} 
+  supportedMediaTypes = {ArrayList@6822}  size = 2
+   0 = {MediaType@5275} "application/json"
+   1 = {MediaType@6824} "application/*+json"
+  defaultCharset = {UTF_8@5235} "UTF-8"
+<<
+List<HttpMessageConverter<?>> converters = new ArrayList<>();
+		if (ClassUtils.isPresent("org.springframework.web.servlet.config.annotation." + "WebMvcConfigurationSupport",
+				null)) {
+			converters.addAll(new WebMvcConfigurationSupport() {
+
+				public List<HttpMessageConverter<?>> defaultMessageConverters() {
+					return super.getMessageConverters();
+				}
+
+			}.defaultMessageConverters());
+		}
+getDefaultConverters:188, HttpMessageConverters
+<-
+<init>:105, HttpMessageConverters
+<init>:92, HttpMessageConverters
+<-
+return new HttpMessageConverters(this.converters); // this.converters as above
+messageConverters:69, HttpMessageConvertersAutoConfiguration
+---
+WebMvcConfigurationSupport#addDefaultHttpMessageConverters(List<HttpMessageConverter<?>> messageConverters)
+<-
+converters.addAll(new WebMvcConfigurationSupport() {
+
+				public List<HttpMessageConverter<?>> defaultMessageConverters() {
+					return super.getMessageConverters(); <--
+				}
+
+			}
+defaultMessageConverters:185, HttpMessageConverters$1
+<<
+WebMvcConfigurationSupport#addDefaultHttpMessageConverters(List<HttpMessageConverter<?>> messageConverters)
+this.messageConverters = {ArrayList@6929}  size = 7
+ 0 = {ByteArrayHttpMessageConverter@6931} 
+  logger = {CompositeLog@6938} 
+  supportedMediaTypes = {ArrayList@6939}  size = 2
+   0 = {MediaType@6945} "application/octet-stream"
+   1 = {MediaType@5215} "*/*"
+  defaultCharset = null
+ 1 = {StringHttpMessageConverter@6932} 
+  availableCharsets = null
+  writeAcceptCharset = false
+  logger = {CompositeLog@6940} 
+  supportedMediaTypes = {ArrayList@6941}  size = 2
+   0 = {MediaType@5214} "text/plain"
+   1 = {MediaType@5215} "*/*"
+  defaultCharset = {ISO_8859_1@6942} "ISO-8859-1"
+ 2 = {ResourceHttpMessageConverter@6933} 
+  supportsReadStreaming = true
+  logger = {CompositeLog@6951} 
+  supportedMediaTypes = {ArrayList@6952}  size = 1
+   0 = {MediaType@5215} "*/*"
+  defaultCharset = null
+ 3 = {ResourceRegionHttpMessageConverter@6934} 
+  logger = {CompositeLog@6955} 
+  supportedMediaTypes = {ArrayList@6956}  size = 1
+   0 = {MediaType@5215} "*/*"
+  defaultCharset = null
+ 4 = {SourceHttpMessageConverter@6935} 
+  transformerFactory = {TransformerFactoryImpl@6959} 
+  supportDtd = false
+  processExternalEntities = false
+  logger = {CompositeLog@6960} 
+  supportedMediaTypes = {ArrayList@6961}  size = 3
+   0 = {MediaType@6963} "application/xml"
+   1 = {MediaType@6964} "text/xml"
+   2 = {MediaType@6965} "application/*+xml"
+  defaultCharset = null
+ 5 = {AllEncompassingFormHttpMessageConverter@6936} 
+  supportedMediaTypes = {ArrayList@6969}  size = 2
+  partConverters = {ArrayList@6970}  size = 5
+   0 = {ByteArrayHttpMessageConverter@6973} 
+    logger = {CompositeLog@6978} 
+    supportedMediaTypes = {ArrayList@6979}  size = 2
+     0 = {MediaType@6945} "application/octet-stream"
+     1 = {MediaType@5215} "*/*"
+    defaultCharset = null
+   1 = {StringHttpMessageConverter@6974} 
+    availableCharsets = null
+    writeAcceptCharset = false
+    logger = {CompositeLog@6983} 
+    supportedMediaTypes = {ArrayList@6984}  size = 2
+     0 = {MediaType@5214} "text/plain"
+     1 = {MediaType@5215} "*/*"
+    defaultCharset = {UTF_8@5235} "UTF-8"
+   2 = {ResourceHttpMessageConverter@6975} 
+    supportsReadStreaming = true
+    logger = {CompositeLog@6988} 
+    supportedMediaTypes = {ArrayList@6989}  size = 1
+     0 = {MediaType@5215} "*/*"
+    defaultCharset = null
+   3 = {SourceHttpMessageConverter@6976} 
+    transformerFactory = {TransformerFactoryImpl@6992} 
+    supportDtd = false
+    processExternalEntities = false
+    logger = {CompositeLog@6993} 
+    supportedMediaTypes = {ArrayList@6994}  size = 3
+     0 = {MediaType@6963} "application/xml"
+     1 = {MediaType@6964} "text/xml"
+     2 = {MediaType@6996} "application/*+xml"
+    defaultCharset = null
+   4 = {MappingJackson2HttpMessageConverter@6977} 
+    jsonPrefix = null
+    objectMapper = {ObjectMapper@7000} 
+    prettyPrint = null
+    ssePrettyPrinter = {DefaultPrettyPrinter@7001} 
+    logger = {CompositeLog@7002} 
+    supportedMediaTypes = {ArrayList@7003}  size = 2
+     0 = {MediaType@5275} "application/json"
+     1 = {MediaType@7005} "application/*+json"
+    defaultCharset = {UTF_8@5235} "UTF-8"
+  charset = {UTF_8@5235} "UTF-8"
+  multipartCharset = null
+ 6 = {MappingJackson2HttpMessageConverter@6937} 
+  jsonPrefix = null
+  objectMapper = {ObjectMapper@7008} 
+  prettyPrint = null
+  ssePrettyPrinter = {DefaultPrettyPrinter@7009} 
+  logger = {CompositeLog@7010} 
+  supportedMediaTypes = {ArrayList@7011}  size = 2
+   0 = {MediaType@5275} "application/json"
+   1 = {MediaType@7013} "application/*+json"
+  defaultCharset = {UTF_8@5235} "UTF-8"
+--
+Combining 2 converters and 7 default converters:
+converters = {ArrayList@6832}  size = 2
+ 0 = {StringHttpMessageConverter@6812} 
+ 1 = {MappingJackson2HttpMessageConverter@6813} 
+defaultConverters = {ArrayList@6928}  size = 7
+ 0 = {ByteArrayHttpMessageConverter@6931} 
+ 1 = {StringHttpMessageConverter@6932} 
+ 2 = {ResourceHttpMessageConverter@6933} 
+ 3 = {ResourceRegionHttpMessageConverter@6934} 
+ 4 = {SourceHttpMessageConverter@6935} 
+ 5 = {AllEncompassingFormHttpMessageConverter@6936} 
+ 6 = {MappingJackson2HttpMessageConverter@6937} 
+into
+this.converters = {Collections$UnmodifiableRandomAccessList@7021}  size = 9
+ 0 = {ByteArrayHttpMessageConverter@6931} 
+ 1 = {StringHttpMessageConverter@6812} 
+ 2 = {StringHttpMessageConverter@6932} 
+ 3 = {ResourceHttpMessageConverter@6933} 
+ 4 = {ResourceRegionHttpMessageConverter@6934} 
+ 5 = {SourceHttpMessageConverter@6935} 
+ 6 = {AllEncompassingFormHttpMessageConverter@6936} 
+ 7 = {MappingJackson2HttpMessageConverter@6813} 
+ 8 = {MappingJackson2HttpMessageConverter@6937} 
+
+result = {ArrayList@5281}  size = 9
+ 0 = {ByteArrayHttpMessageConverter@6931} 
+ 1 = {StringHttpMessageConverter@6812} 
+ 2 = {StringHttpMessageConverter@6932} 
+ 3 = {ResourceHttpMessageConverter@6933} 
+ 4 = {ResourceRegionHttpMessageConverter@6934} 
+ 5 = {SourceHttpMessageConverter@6935} 
+ 6 = {AllEncompassingFormHttpMessageConverter@6936} 
+ 7 = {MappingJackson2HttpMessageConverter@6813} 
+ 8 = {MappingJackson2HttpMessageConverter@6937} 
+
