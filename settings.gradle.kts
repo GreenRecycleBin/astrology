@@ -8,3 +8,5 @@
  */
 
 rootProject.name = "astrology"
+
+include("client")
