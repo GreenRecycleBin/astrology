@@ -81,3 +81,12 @@ allprojects {
         enabled = true
     }
 }
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-security")
+    compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    compile("org.springframework.session:spring-session-jdbc")
+
+    runtimeOnly("com.h2database:h2:1.4.199")
+}
