@@ -86,6 +86,7 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-security")
     compile("org.springframework.boot:spring-boot-starter-thymeleaf")
     compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    compile("org.springframework.boot:spring-boot-starter-cache")
     compile("org.springframework.session:spring-session-jdbc")
 
     runtimeOnly("com.h2database:h2:1.4.199")

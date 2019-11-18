@@ -8,7 +8,6 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-
   @Override
   public void configure(WebSecurity web) {
     web.ignoring().requestMatchers(PathRequest.toH2Console());
@@ -16,13 +15,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
   @Override
   protected void configure(HttpSecurity http) throws Exception {
-    http.authorizeRequests()
-        .requestMatchers(PathRequest.toStaticResources().atCommonLocations())
-        .permitAll()
-        .anyRequest()
-        .authenticated()
-        .and()
-        .formLogin()
-        .permitAll();
+    http.csrf().disable();
+    http.authorizeRequests().anyRequest().permitAll();
+//        .requestMatchers(PathRequest.toStaticResources().atCommonLocations())
+//        .permitAll()
+//        .anyRequest()
+//        .authenticated()
+//        .and()
+//        .formLogin()
+//        .permitAll();
   }
 }

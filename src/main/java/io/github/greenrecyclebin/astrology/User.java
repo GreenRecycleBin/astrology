@@ -4,11 +4,22 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
+import java.util.UUID;
 
 @JsonDeserialize(builder = User.Builder.class)
+@Entity
+@Table(name = "users")
 class User {
+  @Id
+  @GeneratedValue
+  private UUID uuid;
+
   private String firstName;
 
   @NotNull private String lastName;
@@ -16,6 +27,10 @@ class User {
   private LocalDate birthday;
 
   private User() {}
+
+  public UUID getUuid() {
+    return uuid;
+  }
 
   public String getFirstName() {
     return firstName;
