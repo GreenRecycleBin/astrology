@@ -1,0 +1,1 @@
+package io.github.greenrecyclebin.astrology;import io.cucumber.junit.Cucumber;import org.junit.runner.RunWith;@RunWith(Cucumber.class)public class CucumberTest {}

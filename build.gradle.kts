@@ -90,4 +90,14 @@ dependencies {
     compile("org.springframework.session:spring-session-jdbc")
 
     runtimeOnly("com.h2database:h2:1.4.199")
+
+    val cucumberVersion = "4.8.0"
+
+    testCompile("io.cucumber:cucumber-java8:$cucumberVersion")
+    testCompile("io.cucumber:cucumber-junit:$cucumberVersion")
+    testCompile("io.cucumber:cucumber-spring:$cucumberVersion")
+
+    val jUnit5Version = "5.3.2"
+
+    testRuntimeOnly("org.junit.vintage:junit-vintage-engine:$jUnit5Version")
 }
